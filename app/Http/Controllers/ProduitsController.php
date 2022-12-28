@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Demo;
 use App\Models\Produit;
+use App\Models\Commande;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\ProduitsController;
@@ -27,5 +28,18 @@ class ProduitsController extends Controller
         $produit->tva = $request->tva;
         $produit->save();
         return response()->json($produit);
+    }
+
+    function ajouterCommande(Request $request){
+        $commande = new Commande();
+        $commande->id_client = $request->id_client;
+        $commande->id_produit = $request->id_produit;
+        $commande->quantite = $request->quantite;
+        $commande->date = $request->date;
+        $commande->save();
+        return response()->json($commande);        
+        
+        // Code permettant de créer une commande
+
     }
 }
