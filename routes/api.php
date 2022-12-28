@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ClientController;
 use App\Http\Controllers\ProduitsController;
 use App\http\Controllers\CommandesController;
 
@@ -33,3 +34,6 @@ Route::get('/listecommande/{id}',[CommandesController::class,"ListerLesCommandes
 
 //Route supprimer une commande 
 Route::get('/delete/{id}', [CommandesController::class, "supprimerCommande"]);
+
+//ajout client
+Route::post('/client', [ClientController::class, "creerClient"]);
