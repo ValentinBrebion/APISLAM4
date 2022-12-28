@@ -28,5 +28,8 @@ Route::post('/produits', [ProduitsController::class, "ajouter"]);
 //ajout commande
 Route::post('/commande', [ProduitsController::class, "ajouterCommande"]);
 
-//route listecommande
+//route listecommande par client
 Route::get('/listecommande/{id}',[CommandesController::class,"ListerLesCommandes"]);
+
+//Route supprimer une commande 
+Route::get('/delete/{id}', [CommandesController::class, "supprimerCommande"]);
